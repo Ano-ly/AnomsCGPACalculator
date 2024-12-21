@@ -1,0 +1,200 @@
+@import 'index.css';
+
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+button {
+  max-width: fit-content;
+}
+#root {
+  box-sizing: border-box;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 0.2rem;
+  position: fixed;
+}
+
+.cont {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 4rem;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 95vw;
+  height: 80vh;
+  overflow-y: hidden;
+}
+
+
+/* Divs in cont div */ 
+
+
+.cont__main {
+  box-sizing: border-box;
+  flex: 3 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-x: scroll;
+}
+.cont__lgo {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.cont__main__maj__sbar__btn {
+  background-color: var(--div2-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: inset -0.02rem -0.08rem 0.1rem rgb(255, 255, 255);
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--font1-color);
+  cursor: pointer;
+  text-align: center;
+}
+
+
+
+.cont__main__dec {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  height: 2rem;
+}
+.cont__main__dec__col {
+  min-width: 25%;
+}
+.cont__main__dec__col--col2 {
+  background-color: var(--div2-color);
+}
+.cont__main__dec__col--col1 {
+  background-color: var(--div1-color);
+}
+
+/* Divs in cont__main div */ 
+.cont__main__itr {
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: var(--font2-color);
+}
+.cont__main__cpt {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.cont__main__maj {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.cont__main__maj__sbar {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 0;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  gap: 1rem;
+}
+.cont__main__maj__crs {
+  flex: 17 4 1;
+  border: 0.02rem solid var(--div1-color);
+  box-shadow: inset -0.02rem 0.03rem 0.2rem rgb(182, 168, 168);
+  border-radius: 0.5rem;
+  height: 8rem;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+.cont__main__maj__crsdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cont__main__cpt__btn {
+  background-color: var(--div2-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+.cont__main__maj__sbar__btn:hover, .cont__main__cpt__btn:hover {
+  background-color: var(--div1-color);
+}
+.cont__main__rst {
+  min-height: 5rem;
+  background-color: var(--div1-color);
+  border-radius: 0.5rem;
+}
+.cont__main__maj__crsdiv__cse {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  appearance: none;
+  max-width: 100%;
+}
+
+/**/
+
+.cont__lgo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.cont__lgo__img {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.cont__main__maj__crsdiv__cse__fld {
+  flex: 1;
+  min-width: 0;
+  height: 2.5rem;
+  padding-left: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--div2-color);
+}
+
+
+
+@media (max-width:767px) {
+  .cont__main__maj__crsdiv__cse {
+    flex-direction: column;
+    gap: 0.3rem;
+    appearance: none;
+    max-width: 100%;
+  }
+  .cont__main__maj__crsdiv__cse__fld {
+    flex: 1;
+    flex-basis: 2rem;
+  }
+  .cont__lgo__img {
+    font-size: 1rem;
+  }
+  .cont__main__itr {
+    text-align: center;
+  }
+  .cont {
+    flex-direction: column;
+  }
+  .cont__main__maj__sbar {
+    padding: 0.5rem;
+  }
+}
+
+
+
+
+
