@@ -155,7 +155,7 @@ button {
   justify-content: flex-end;
 }
 .cont__lgo__img {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 .cont__main__maj__crsdiv__cse__fld {
@@ -188,9 +188,22 @@ button {
   }
   .cont {
     flex-direction: column;
+    gap: 1rem;
+  }
+  .cont__main {
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+  .cont__lgo {
+    flex-shrink: 30;
+    flex-basis: 1;
+    height: max-content;
   }
   .cont__main__maj__sbar {
     padding: 0.5rem;
+  }
+  .cont__main__maj {
+    
   }
 }
 
