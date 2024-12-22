@@ -14,7 +14,6 @@ button {
   max-height: 100vh;
   margin: 0 auto;
   padding: 0.2rem;
-  position: fixed;
 }
 
 .cont {
@@ -23,9 +22,9 @@ button {
   margin-top: 4rem;
   flex-direction: row;
   justify-content: space-between;
-  min-width: 95vw;
-  height: 80vh;
-  overflow-y: hidden;
+  max-width: 95vw;
+  min-height: 100vh;
+  overflow-y: scroll;
 }
 
 
@@ -130,6 +129,7 @@ button {
   padding: 0.5rem;
   cursor: pointer;
   text-align: center;
+  color: var(--font1-color);
 }
 .cont__main__maj__sbar__btn:hover, .cont__main__cpt__btn:hover {
   background-color: var(--div1-color);
@@ -166,6 +166,16 @@ button {
   border-radius: 0.5rem;
   border: 1px solid var(--div2-color);
 }
+.cont__main__maj__crsdiv__cse__fld:hover {
+  background-color: var(--div1-color);
+  appearance: none;
+}
+.cont__main__maj__crsdiv__cse__fld:focus {
+  appearance: none;
+  outline: none;
+  border: 2px solid var(--div2-color);
+}
+
 
 
 
