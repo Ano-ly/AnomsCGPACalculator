@@ -22,7 +22,7 @@ button {
   margin-top: 4rem;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 95vw;
+  width: 95vw;
   min-height: 100vh;
   overflow-y: scroll;
 }
