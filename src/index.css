@@ -4,10 +4,11 @@
   font-weight: 400;
   font-size: 16px;
 
+  --div1-color: rgb(177, 177, 177);
   --div2-color: rgba(21, 13, 68, 0.87);
+  --div3-color: rgb(228, 223, 223);
   --light-color: rgba(236, 233, 255, 0.87);
   background-color: white;
-  --div1-color: rgb(177, 177, 177);
   --font1-color: rgba(247, 246, 252, 0.87);
   --font2-color: rgba(10, 6, 33, 0.87);
   font-synthesis: none;
