@@ -172,6 +172,7 @@ button {
 }
 .cont__main__maj__crsdiv__cse__fld {
   flex: 1;
+  font-family: "Montserrat", serif;
   min-width: 0;
   height: 2.5rem;
   padding-left: 1rem;
