@@ -13,7 +13,7 @@ button {
   max-width: 100vw;
   margin: 0 auto;
   padding: 0.2rem;
-  font-family: "Montserrat", serif;
+  font-family: "Chakra Petch", serif;
 }
 
 .cont {
@@ -90,7 +90,7 @@ button {
   box-sizing: border-box;
   font-size: 1rem;
   flex-grow: 0;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--font2-color);
 }
 .cont__main__cpt {
@@ -105,7 +105,7 @@ button {
   display: flex;
   flex-direction: row;
   flex-grow: 0;
-  gap: 1rem;
+  gap: 0.5rem;
   padding-right: 1rem;
 }
 .cont__main__maj__sbar {
@@ -150,7 +150,7 @@ button {
 .cont__main__rst {
   flex-grow: 0;
   min-height: 5rem;
-  font-weight: 500;
+  font-weight: 400;
   background-color: var(--div1-color);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -177,7 +177,7 @@ button {
 }
 .cont__main__maj__crsdiv__cse__fld {
   flex: 1;
-  font-family: "Montserrat", serif;
+  font-family: "Chakra Petch", serif;
   min-width: 0;
   height: 2.5rem;
   padding-left: 1rem;
@@ -194,7 +194,7 @@ button {
   border: 2px solid var(--div2-color);
 }
 .cont__main__maj__crsdiv__cse__fld::placeholder {
-  font-family: "Montserrat", serif;
+  font-family: "Chakra Petch", serif;
 }
 
 
