@@ -59,7 +59,7 @@ function App() {
       </div>
       <div class="cont__lgo">
         <div class="cont__lgo__img">
-          Anom's<br/>CGPA Calculator
+          Anom's<br/>GPA Calculator
         </div>
       </div>
     </div>
