@@ -42,7 +42,6 @@ function CalcButton(props) {
                 </div>
                 <div class="cont__main__cmb__cpt__rst">
                     Your CGPA is <br/> <b class="bold">{gpa}</b>
-                    {JSON.stringify(props.courses)}
                 </div>
             </div>
         );
