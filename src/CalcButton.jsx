@@ -1,9 +1,17 @@
-
 import { useState } from 'react';
 
 function CalcButton(props) {
     const [gpa, changeGpa] = useState(0);
     const [active, changeActive] = useState(true);
+
+    const checkCourse = (cObj) => {
+        const grades = ["A", "B", "C", "D", "E", "F", "a", "b", "c", "d", "e", "f"];
+        if (cObj.code !== "" && !(isNaN(parseInt(cObj.units))) && grades.includes(cObj.grade)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     const calculate = (items) => {
         let unitsTotal = 0;
         let totalPoints = 0;
@@ -22,9 +30,19 @@ function CalcButton(props) {
     }; 
 
 
-    const changeTheGPA = (activeStatus) => {
-        if (activeStatus === true) {
+    const changeTheGPA = () => {
+
+        let allAreValid = true;
+        for (let item of props.courses) {
+            if (checkCourse(item) === false) { 
+                changeGpa(props.courses);  
+                allAreValid = false;
+            }
+        }
+        if (allAreValid === true) {
             changeGpa(calculate(props.courses));
+        } else {
+            changeGpa(props.errors);    
         }
     };
 
@@ -34,14 +52,13 @@ function CalcButton(props) {
         return (
             <div class="cont__main__cmb__cpt">
                 <div class="cont__main__cmb__cpt__btn" onClick={() => {
-                    if (props.status === true) {
-                        changeTheGPA(active)
-                    }
+                        changeTheGPA();
                     }}>
                     Calculate
                 </div>
                 <div class="cont__main__cmb__cpt__rst">
                     Your CGPA is <br/> <b class="bold">{gpa}</b>
+                    {JSON.stringify(props.errors)}
                     {JSON.stringify(props.courses)}
                 </div>
             </div>

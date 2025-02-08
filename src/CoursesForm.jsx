@@ -5,7 +5,8 @@ import CalcButton from './CalcButton.jsx';
 
 
 function CoursesForm() {
-    const [myCourses, changeMyCourses] = useState([])
+    const [myCourses, changeMyCourses] = useState([]);
+    const [errorStrs, changeErrorStrs] = useState([]);
     //const [noOfCourses, changeNoOfCourses] = useState(0);
     function AddCourse() {
         const addCourse = () => {
@@ -31,11 +32,18 @@ function CoursesForm() {
             </div>
         );
     }
-    const changeCourseInfo = (indx, newCourse) => {
-        const updCourses = [...myCourses];
-        updCourses[indx - 1] = newCourse;
+    const changeCourseInfo = (num, newCourse) => {
+        let updCourses = [...myCourses];
+        for (const attr in newCourse) {
+            updCourses[num - 1][attr] = newCourse[attr];
+        }
         changeMyCourses(updCourses);
-    }
+    };
+    const changeErrorStrsVar = (num, err) => {
+        const prevErrorStrs = [...errorStrs];
+        prevErrorStrs[num - 1] = err;
+        changeErrorStrs(prevErrorStrs);
+    };
 /*
     if (noOfCourses < 0) {
         noOfCourses = 0;
@@ -50,11 +58,11 @@ function CoursesForm() {
                 </div>
                 <form class="cont__main__cmb__maj__crs">
                     <div class="cont__main__cmb__maj__crsdiv">
-                        {myCourses.map((c, i) => {return <Course num={i + 1} func={changeCourseInfo}/>})}
+                        {myCourses.map((c, i) => {return <Course num={i + 1} errStrs={errorStrs} func={changeCourseInfo} func2={changeErrorStrsVar}/>})}
                     </div>
                 </form>
             </div>
-            <CalcButton courses={myCourses} change={false} status={true}/>
+            <CalcButton courses={myCourses} change={false} status={true} errors={errorStrs}/>
         </div>
     );
 }

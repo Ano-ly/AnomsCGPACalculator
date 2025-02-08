@@ -8,43 +8,96 @@ function Course(props) {
     const [units, changeUnits] = useState("");
     const [error, changeError] = useState("");
 
+    useEffect (() => {
+        changeError("Please input course information");
+        props.func2(props.num, `${code}: Please input course information.`);
 
-    /**
-    useEffect(() => {
-        if (error != "") {
-            CalcButton({ change: true, status: false});
+        return () => {
+            changeError("");
+            props.func2(props.num, "");
         }
-    }, [error]);
-    **/
     
+    }, [])
+
+    const handleErrors = (field) => {
+        if (field == "code") {
+            if (code == "") {
+                changeError("Please input course code.");
+                props.func2(props.num, `${code}: Please input course code.`);
+            }
+        } else if (field == "grade") {
+            const grades = ["A", "B", "C", "D", "E", "F"];
+            if (grade === "") {
+                changeError("Please input a grade.");
+                props.func2(props.num, `${code}: Please input a grade.`);
+            } else if (!(grades.includes(grade))) {
+                changeError("Invalid grade.");
+                props.func2(props.num, `${code}: Invalid grade.`)
+            }
+        } else if (field == "units") {
+            if (units === "") {
+                changeError("Please input number of units.");
+                props.func2(props.num, `${code}: Please input number of units.`);
+            } else if (isNaN(units)) {
+                changeError("Invalid number.");
+                props.func2(props.num, `${code}: Invalid number.`);
+            }
+        }
+    } 
+    
+
     const handleOnChangeCode  = (event) => {
-        changeCode(event.target.value);
-        props.func(props.num, {code: event.target.value, grade: grade, units: units});
+        props.func(props.num, {code: event.target.value});
+        changeCode(event.target.value.toString());
+        if (event.target.value !== "") {
+            props.func2("");
+            changeError("");
+            handleErrors("grade")
+            handleErrors("units")
+        } else if (event.target.value == "") {
+            changeCode("")
+            changeError("Please input course code.");
+            props.func2(props.num, `${code}: Please input course code.`);
+        }  
+        props.func(props.num, {code: event.target.value});
     }
     
     const handleOnChangeUnits = (event) => {
-        let convUnits = parseInt(event.target.value);
-        if (event.target.value === "") {
+        props.func(props.num, {units: event.target.value});
+        let convUnits = parseInt(event.target.value.toString());
+        changeUnits(event.target.value.toString())
+        if (event.target.value !== "" && !(isNaN(convUnits))) {
+            props.func2(props.num, "");
+            changeError("");
+            handleErrors("code")
+            handleErrors("grade")
+        } else if (event.target.value === "") {
+            changeUnits("")
             changeError("Please input number of units.");
+            props.func2(props.num, `${code}: Please input number of units.`);
         } else if (isNaN(convUnits)) {
             changeError("Invalid number.");
-        } else {
-            changeUnits(convUnits)
-            changeError("");
-            props.func(props.num, {code: code, grade: grade, units: parseInt(event.target.value)});
-        } 
+            props.func2(props.num, `${code}: Invalid number.`);
+        }
     }
     const handleOnChangeGrade = (event) => {
+        props.func(props.num, {code: code, grade: event.target.value.toUpperCase(), units: units});
         const grades = ["A", "B", "C", "D", "E", "F"];
-        let captGrade = event.target.value.toUpperCase();
+        let captGrade = event.target.value.toUpperCase().toString();
+        changeGrade(captGrade);
         if (grades.includes(captGrade)) {
             changeGrade(captGrade);
+            props.func2(props.num, "");
             changeError("");
-            props.func(props.num, {code: code, grade: event.target.value.toUpperCase(), units: units});
+            handleErrors("code")
+            handleErrors("units")
         } else if (captGrade === "") {
+            changeGrade("")
             changeError("Please input a grade.");
-        } else {
+            props.func2(props.num, `${code}: Please input a grade.`);
+        } else if (!(grades.includes(captGrade))) {
             changeError("Invalid grade.");
+            props.func2(props.num, `${code}: Invalid grade.`)
         }
     }
     return (
@@ -58,7 +111,7 @@ function Course(props) {
                 <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="Course Code" name="crs_title" onChange={handleOnChangeCode}/>
                 <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="No of Units" name="units" onChange={handleOnChangeUnits}/>
                 <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld" type="text" placeholder="Grade" name="grade" onChange={handleOnChangeGrade}/>
-                <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">{error}</div>
+                <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">{error} {code} {grade} {units}</div>
             </div>                   
         </div>
     );
