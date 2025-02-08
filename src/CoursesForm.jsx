@@ -62,7 +62,7 @@ function CoursesForm() {
                     </div>
                 </form>
             </div>
-            <CalcButton courses={myCourses} change={false} status={true} errors={errorStrs}/>
+            <CalcButton courses={myCourses} change={false} status={true}/>
         </div>
     );
 }

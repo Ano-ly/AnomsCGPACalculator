@@ -6,7 +6,7 @@ function CalcButton(props) {
 
     const checkCourse = (cObj) => {
         const grades = ["A", "B", "C", "D", "E", "F", "a", "b", "c", "d", "e", "f"];
-        if (cObj.code !== "" && !(isNaN(parseInt(cObj.units))) && grades.includes(cObj.grade)) {
+        if (cObj.code !== "" && !(isNaN(Number(cObj.units))) && grades.includes(cObj.grade)) {
             return true;
         } else {
             return false;
@@ -42,7 +42,7 @@ function CalcButton(props) {
         if (allAreValid === true) {
             changeGpa(calculate(props.courses));
         } else {
-            changeGpa(props.errors);    
+            changeGpa("ERR");    
         }
     };
 
@@ -58,8 +58,6 @@ function CalcButton(props) {
                 </div>
                 <div class="cont__main__cmb__cpt__rst">
                     Your CGPA is <br/> <b class="bold">{gpa}</b>
-                    {JSON.stringify(props.errors)}
-                    {JSON.stringify(props.courses)}
                 </div>
             </div>
         );

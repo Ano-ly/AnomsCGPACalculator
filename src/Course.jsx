@@ -111,7 +111,7 @@ function Course(props) {
                 <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="Course Code" name="crs_title" onChange={handleOnChangeCode}/>
                 <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="No of Units" name="units" onChange={handleOnChangeUnits}/>
                 <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld" type="text" placeholder="Grade" name="grade" onChange={handleOnChangeGrade}/>
-                <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">{error} {code} {grade} {units}</div>
+                <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">{error}</div>
             </div>                   
         </div>
     );
