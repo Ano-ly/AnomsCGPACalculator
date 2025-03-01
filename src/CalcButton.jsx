@@ -4,14 +4,6 @@ function CalcButton(props) {
     const [gpa, changeGpa] = useState(0);
     const [active, changeActive] = useState(true);
 
-    const checkCourse = (cObj) => {
-        const grades = ["A", "B", "C", "D", "E", "F", "a", "b", "c", "d", "e", "f"];
-        if (cObj.code !== "" && !(isNaN(Number(cObj.units))) && grades.includes(cObj.grade)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
     const calculate = (items) => {
         let unitsTotal = 0;
         let totalPoints = 0;
@@ -27,11 +19,19 @@ function CalcButton(props) {
             calcGpa = totalPoints / unitsTotal;     
         }
         return (calcGpa.toFixed(2));
-    }; 
+    };
 
+    //Check if all the information supplied is valid for computation
+    const checkCourse = (cObj) => {
+        const grades = ["A", "B", "C", "D", "E", "F", "a", "b", "c", "d", "e", "f"];
+        if (cObj.code !== "" && !(isNaN(Number(cObj.units))) && grades.includes(cObj.grade)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     const changeTheGPA = () => {
-
         let allAreValid = true;
         for (let item of props.courses) {
             if (checkCourse(item) === false) { 
