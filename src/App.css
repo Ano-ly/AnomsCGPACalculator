@@ -67,7 +67,21 @@ button {
   color: var(--font1-color);
   cursor: pointer;
   text-align: center;
+  transition: background-color .2s;
   user-select: none;
+}
+
+@keyframes blink {
+  from {transform: scale(1.0);}
+  to {transform: scale(1.2);}
+}
+.add {
+  transform: scale(1.0);
+  animation-name: blink;
+  animation-duration: 0.35s;
+  animation-iteration-count: 5;
+  animation-direction: alternate;
+  animation-timing-function: ease;
 }
 
 
@@ -159,14 +173,17 @@ button {
   text-align: center;
   align-self: flex-end;
   color: var(--font1-color);
+  transition: background-color .2s, transform .15s;
   user-select: none; 
   max-width: fit-content;
 }
 .cont__main__cmb__maj__sbar__btn:hover, .cont__main__cmb__cpt__btn:hover {
   background-color: var(--div1-color);
+  transform: scale(1.05);
 }
 .cont__main__cmb__cpt__rst {
   flex-grow: 0;
+  flex-shrink: 0;
   min-height: 5rem;
   font-weight: 400;
   line-height: 2.5rem;
@@ -207,6 +224,7 @@ button {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  cursor: pointer;
 }
 .cont__main__cmb__maj__crsdiv__cse__num__img {
   background-color: var(--div1-color);
@@ -218,7 +236,6 @@ button {
 .cont__main__cmb__maj__crsdiv__cse__flds__err {
   text-align: end;
   font-size: 0.55rem;
-  
   padding-right: 0.5rem;
   padding-top: 0.3rem;
   color: var(--font3-color);
@@ -245,6 +262,7 @@ button {
   padding-left: 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--div2-color);
+  transition: background-color .2s;
 }
 .cont__main__cmb__maj__crsdiv__cse__flds__fld:hover {
   background-color: var(--div3-color);

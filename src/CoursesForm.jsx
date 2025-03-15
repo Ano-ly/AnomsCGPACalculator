@@ -10,11 +10,12 @@ function CoursesForm() {
     //const [noOfCourses, changeNoOfCourses] = useState(0);
     function AddCourse() {
         const addCourse = () => {
-            changeMyCourses([...myCourses, {code: "", units: "0", grade: "0"}]);
-            //changeNoOfCourses(noOfCourses + 1);
+            if (myCourses.length < 999) {
+                changeMyCourses([...myCourses, {code: "", units: "0", grade: "0"}]);
+            }
         };
         return (
-            <div class="cont__main__cmb__maj__sbar__btn" onClick={addCourse}>
+            <div className="cont__main__cmb__maj__sbar__btn add" onClick={addCourse}>
                 +
             </div>
         );
@@ -27,7 +28,7 @@ function CoursesForm() {
             }
         };
         return (
-            <div class="cont__main__cmb__maj__sbar__btn" onClick={remCourse}>
+            <div className="cont__main__cmb__maj__sbar__btn" onClick={remCourse}>
                 -
             </div>
         );
@@ -50,14 +51,14 @@ function CoursesForm() {
     }
 */
     return (
-        <div class="cont__main__cmb">
-            <div class="cont__main__cmb__maj">
-                <div class="cont__main__cmb__maj__sbar">
+        <div className="cont__main__cmb">
+            <div className="cont__main__cmb__maj">
+                <div className="cont__main__cmb__maj__sbar">
                     <AddCourse />
                     <RemCourse />
                 </div>
-                <form class="cont__main__cmb__maj__crs">
-                    <div class="cont__main__cmb__maj__crsdiv">
+                <form className="cont__main__cmb__maj__crs">
+                    <div className="cont__main__cmb__maj__crsdiv">
                         {myCourses.map((c, i) => {return <Course num={i + 1} errStrs={errorStrs} func={changeCourseInfo} func2={changeErrorStrsVar}/>})}
                     </div>
                 </form>

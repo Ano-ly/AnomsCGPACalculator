@@ -7,29 +7,29 @@ import CoursesForm from './CoursesForm.jsx';
 function App() {
   
   return (
-    <div class="cont">
-      <div class="cont__main">
-        <div class="cont__main__dec"> 
-          <div class="cont__main__dec__col cont__main__dec__col--col1">
+    <div className="cont">
+      <div className="cont__main">
+        <div className="cont__main__dec"> 
+          <div className="cont__main__dec__col cont__main__dec__col--col1">
             .
           </div>
-          <div class="cont__main__dec__col cont__main__dec__col--col2">
+          <div className="cont__main__dec__col cont__main__dec__col--col2">
             
           </div>
-          <div class="cont__main__dec__col cont__main__dec__col--col1">
+          <div className="cont__main__dec__col cont__main__dec__col--col1">
             
           </div>
-          <div class="cont__main__dec__col cont__main__dec__col--col2">
+          <div className="cont__main__dec__col cont__main__dec__col--col2">
             
           </div>
         </div>
-        <div class="cont__main__itr">
+        <div className="cont__main__itr">
           Calculate your GPA...
         </div>
         <CoursesForm />    
       </div>
-      <div class="cont__lgo">
-        <div class="cont__lgo__img">
+      <div className="cont__lgo">
+        <div className="cont__lgo__img">
           Anom's<br/>GPA Calculator
         </div>
       </div>
