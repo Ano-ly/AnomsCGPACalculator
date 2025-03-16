@@ -20,7 +20,7 @@ function App() {
             Calculate
           </div>
           <div className="cont__main__dec__col cont__main__dec__col--col2 cont__main__dec__col--col1--two">
-            your GPA...
+            your GPA
           </div>
         </div>
         <CoursesForm />    
