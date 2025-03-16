@@ -160,6 +160,7 @@ button {
   flex-direction: column;
   gap: 1rem;
   min-width: 11rem;
+  min-height: fit-content;
   padding-left: 0.5rem;
 }
 .cont__main__cmb__maj__crsdiv::placeholder {
