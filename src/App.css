@@ -56,12 +56,12 @@ button {
 }
 
 .cont__main__cmb__maj__sbar__btn {
-  background-color: var(--div2-color);
+  background-color: var(--div4-color);
   font-family: "Chakra Petch", serif;
   padding: 0.5rem;
   font-weight: 500;
   border-radius: 0.5rem;
-  box-shadow: inset -0.02rem -0.08rem 0.1rem rgb(255, 255, 255);
+  box-shadow: inset -0.01rem -0.01rem 0.1rem rgb(255, 255, 255);
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: var(--font1-color);
@@ -98,12 +98,13 @@ button {
   height: 4rem;
   padding-top: 1.2rem;
   min-width: 25%;
+  border-radius: 30px;
 }
 .cont__main__dec__col--col2 {
-  background-color: var(--div2-color);
+  background-color: var(--div4-color);
 }
 .cont__main__dec__col--col1 {
-  background-color: var(--div1-color);
+  background-color: var(--div4-color);
 }
 
 /* Divs in cont__main div */ 
@@ -141,7 +142,7 @@ button {
   gap: 0.5rem;
 }
 .cont__main__cmb__maj__crs {
-  border: 0.02rem solid var(--div1-color);
+  border: 0.02rem solid var(--div5-color);
   flex: 1 1 0;
   border-radius: 0.5rem;
   min-height: 7rem;
@@ -163,7 +164,8 @@ button {
   font-size: 3rem;
 }
 .cont__main__cmb__cpt__btn {
-  background-color: var(--div2-color);
+  background-color: var(--div4-color);
+  box-shadow: inset -0.01rem -0.01rem 0.1rem rgb(255, 255, 255);
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
@@ -179,8 +181,8 @@ button {
   transform: scale(1.05);
 }
 @keyframes colorblink {
-  from {background-color: var(--div1-color);}
-  to {background-color: var(--div3-color);}
+  from {background-color: var(--div4-color);}
+  to {background-color: var(--div5-color);}
 }
 .cont__main__cmb__cpt__rst {
   animation-name: colorblink;
@@ -192,11 +194,13 @@ button {
   flex-shrink: 0;
   min-height: 5rem;
   font-weight: 400;
+  color: var(--font1-color);
   line-height: 2.5rem;
-  background-color: var(--div1-color);
+  background-color: var(--div4-color);
   border-radius: 0.5rem;
   padding: 1rem;
   text-align: center;
+  margin-left: 2rem;
 }
 .cont__main__cmb__maj__crsdiv__cse {
   box-sizing: border-box;
@@ -237,6 +241,7 @@ button {
   border-radius: 13rem;
   padding: 0.04rem 0.3rem;
   font-size: 0.6rem;
+  color: var(--font2-color);
   border: 0.02rem solid var(--div2-color)
 }
 .cont__main__cmb__maj__crsdiv__cse__flds__err {
@@ -258,16 +263,19 @@ button {
 .cont__lgo__img {
   font-size: 1.5rem;
   font-family: "Chakra Petch", serif;
+  color: var(--font1-color);
   text-align: center;
 }
 .cont__main__cmb__maj__crsdiv__cse__flds__fld {
   flex: 1;
   font-family: "Chakra Petch", serif;
+  color: white;
   min-width: 0;
   min-height: 2.5rem;
   padding-left: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--div2-color);
+  background-color: var(--div5-color);
+  border: 1px solid var(--div5-color);
   transition: background-color .2s;
 }
 .cont__main__cmb__maj__crsdiv__cse__flds__fld:hover {
@@ -294,6 +302,7 @@ button {
 .cont__main__dec__col--col1--one {
   text-align: right;
   padding-right: 0.3rem;
+  color: var(--font3-color);
 }
 .cont__main__dec__col--col1--two {
   color: var(--font1-color);

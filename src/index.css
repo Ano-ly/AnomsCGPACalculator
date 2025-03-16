@@ -7,6 +7,8 @@
   --div1-color: rgb(177, 177, 177);
   --div2-color: rgba(21, 13, 68, 0.87);
   --div3-color: rgb(228, 223, 223);
+  --div4-color: rgb(25, 26, 28);
+  --div5-color: rgb(58, 59, 62);
   --light-color: rgba(236, 233, 255, 0.87);
   background-color: white;
   --font1-color: rgba(247, 246, 252, 0.87);
@@ -23,5 +25,6 @@ body {
   place-items: center;
   max-width: 100vw;
   min-height: 100vh;
+  background-color: var(--div4-color) 
 }
 
