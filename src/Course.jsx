@@ -10,8 +10,8 @@ function Course(props) {
 
     useEffect (() => {
         changeError("Please input course information");
+        props.refToAdd.current.classList.toggle("add");
         props.func2(props.num, `${code}: Please input course information.`);
-
         return () => {
             changeError("");
             props.func2(props.num, "");

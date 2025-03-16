@@ -1,12 +1,14 @@
 import Course from './Course';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import CalcButton from './CalcButton.jsx';
+import { useEffect } from 'react';
 
 
 
 function CoursesForm() {
     const [myCourses, changeMyCourses] = useState([]);
     const [errorStrs, changeErrorStrs] = useState([]);
+    const refToAddVar = useRef(null);
     //const [noOfCourses, changeNoOfCourses] = useState(0);
     function AddCourse() {
         const addCourse = () => {
@@ -15,7 +17,7 @@ function CoursesForm() {
             }
         };
         return (
-            <div className="cont__main__cmb__maj__sbar__btn add" onClick={addCourse}>
+            <div ref={refToAddVar} className="cont__main__cmb__maj__sbar__btn" onClick={addCourse}>
                 +
             </div>
         );
@@ -56,10 +58,13 @@ function CoursesForm() {
                 <div className="cont__main__cmb__maj__sbar">
                     <AddCourse />
                     <RemCourse />
+                    <div className="cont__main__cmb__maj__sbar__cnt">
+                        {myCourses.length}
+                    </div>
                 </div>
                 <form className="cont__main__cmb__maj__crs">
                     <div className="cont__main__cmb__maj__crsdiv">
-                        {myCourses.map((c, i) => {return <Course num={i + 1} errStrs={errorStrs} func={changeCourseInfo} func2={changeErrorStrsVar}/>})}
+                        {myCourses.map((c, i) => {return <Course num={i + 1} errStrs={errorStrs} func={changeCourseInfo} func2={changeErrorStrsVar} refToAdd={refToAddVar}/>})}
                     </div>
                 </form>
             </div>
