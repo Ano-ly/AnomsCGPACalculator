@@ -57,7 +57,7 @@ function CalcButton(props) {
                     Calculate
                 </div>
                 <div className="cont__main__cmb__cpt__rst">
-                    Your CGPA is <br/> <b className="bold">{gpa}</b>
+                    Your GPA is <br/> <b className="bold">{gpa}</b>
                 </div>
             </div>
         );

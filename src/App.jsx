@@ -16,15 +16,12 @@ function App() {
           <div className="cont__main__dec__col cont__main__dec__col--col2">
             
           </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col1">
-            
+          <div className="cont__main__dec__col cont__main__dec__col--col1 cont__main__dec__col--col1--one">
+            Calculate
           </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col2">
-            
+          <div className="cont__main__dec__col cont__main__dec__col--col2 cont__main__dec__col--col1--two">
+            your GPA...
           </div>
-        </div>
-        <div className="cont__main__itr">
-          Calculate your GPA...
         </div>
         <CoursesForm />    
       </div>
