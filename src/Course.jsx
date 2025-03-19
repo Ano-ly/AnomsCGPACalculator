@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from 'react';
+import { Component, useEffect, useState} from 'react';
 import CalcButton from './CalcButton.jsx';
 
 
@@ -8,9 +8,9 @@ function Course(props) {
     const [units, changeUnits] = useState("");
     const [error, changeError] = useState("");
 
+     
     useEffect (() => {
         changeError("Please input course information");
-        props.refToAdd.current.classList.toggle("add");
         props.func2(props.num, `${code}: Please input course information.`);
         return () => {
             changeError("");
@@ -20,12 +20,12 @@ function Course(props) {
     }, [])
 
     const handleErrors = (field) => {
-        if (field == "code") {
-            if (code == "") {
+        if (field === "code") {
+            if (code === "") {
                 changeError("Please input course code.");
                 props.func2(props.num, `${code}: Please input course code.`);
             }
-        } else if (field == "grade") {
+        } else if (field === "grade") {
             const grades = ["A", "B", "C", "D", "E", "F"];
             if (grade === "") {
                 changeError("Please input a grade.");
@@ -34,7 +34,7 @@ function Course(props) {
                 changeError("Invalid grade.");
                 props.func2(props.num, `${code}: Invalid grade.`)
             }
-        } else if (field == "units") {
+        } else if (field === "units") {
             if (units === "") {
                 changeError("Please input number of units.");
                 props.func2(props.num, `${code}: Please input number of units.`);
@@ -54,7 +54,7 @@ function Course(props) {
             changeError("");
             handleErrors("grade")
             handleErrors("units")
-        } else if (event.target.value == "") {
+        } else if (event.target.value === "") {
             changeCode("")
             changeError("Please input course code.");
             props.func2(props.num, `${code}: Please input course code.`);
@@ -108,7 +108,14 @@ function Course(props) {
                     <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="No of Units" name="units" onChange={handleOnChangeUnits}/>
                     <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld" type="text" placeholder="Grade" name="grade" onChange={handleOnChangeGrade}/>
                 </div>
-                <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">{error}</div>
+                <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">
+                    <div className="cont__main__cmb__maj__crsdiv__cse__flds__err__smb">
+                        {error ? "!" : ""}
+                    </div>
+                    <div className="cont__main__cmb__maj__crsdiv__cse__flds__err__msg">
+                        {error}
+                    </div>
+                </div>
             </div>      
             <div className="cont__main__cmb__maj__crsdiv__cse__num">
                 <div className="cont__main__cmb__maj__crsdiv__cse__num__img">
