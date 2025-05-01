@@ -1,9 +1,6 @@
 import './App.css';
 import CoursesForm from './CoursesForm.jsx';
 
-
-
-
 function App() {
   
   return (
@@ -11,7 +8,7 @@ function App() {
       <div className="cont__main">
         <div className="cont__main__dec"> 
           <div className="cont__main__dec__col cont__main__dec__col--col1">
-            .
+            
           </div>
           <div className="cont__main__dec__col cont__main__dec__col--col2">
             

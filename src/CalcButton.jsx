@@ -2,8 +2,8 @@ import { useState} from 'react';
 
 function CalcButton(props) {
     const [gpa, changeGpa] = useState(0);
-    const [active, changeActive] = useState(true);
-
+    const [error, changeErr] = useState(0);
+    // Calculate GPA and return to two decimal places
     const calculate = (items) => {
         let unitsTotal = 0;
         let totalPoints = 0;
@@ -31,6 +31,7 @@ function CalcButton(props) {
         }
     }
 
+    // Calculate GPA only if all inputs are Valid
     const changeTheGPA = () => {
         let allAreValid = true;
         for (let item of props.courses) {
@@ -40,28 +41,26 @@ function CalcButton(props) {
             }
         }
         if (allAreValid === true) {
+            changeErr(0);
             changeGpa(calculate(props.courses));
         } else {
             changeGpa("ERR");    
+            changeErr(1);
         }
     };
 
-    if (props.change === true) {
-        changeActive(props.status);
-    } else {
-        return (
-            <div className="cont__main__cmb__cpt">
-                <div className="cont__main__cmb__cpt__btn" onClick={() => {
-                        changeTheGPA();
-                    }}>
-                    Calculate
-                </div>
-                <div className="cont__main__cmb__cpt__rst">
-                    Your GPA is <br/> <b className="bold">{gpa}</b>
-                </div>
+    return (
+        <div className="cont__main__cmb__cpt">
+            <div className="cont__main__cmb__cpt__btn" onClick={() => {
+                    changeTheGPA();
+                }}>
+                Compute
             </div>
-        );
-    }
+            <div className="cont__main__cmb__cpt__rst">
+            {error ? "Please review information filled." : "Your GPA is"} <br/> <b className="bold">{gpa}</b>
+            </div>
+        </div>
+    );
 }
 
 export default CalcButton;

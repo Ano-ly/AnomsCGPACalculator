@@ -1,5 +1,5 @@
 import { Component, useEffect, useState} from 'react';
-import CalcButton from './CalcButton.jsx';
+// import CalcButton from './CalcButton.jsx';
 
 
 function Course(props) {
@@ -8,13 +8,13 @@ function Course(props) {
     const [units, changeUnits] = useState("");
     const [error, changeError] = useState("");
 
-     
+    // Display initial error only when course input field component is mounted
     useEffect (() => {
         changeError("Please input course information");
-        props.func2(props.num, `${code}: Please input course information.`);
+        // props.func2(props.num, `${code}: Please input course information.`);
         return () => {
             changeError("");
-            props.func2(props.num, "");
+            // props.func2(props.num, "");
         }
     
     }, [])
@@ -23,24 +23,24 @@ function Course(props) {
         if (field === "code") {
             if (code === "") {
                 changeError("Please input course code.");
-                props.func2(props.num, `${code}: Please input course code.`);
+                // props.func2(props.num, `${code}: Please input course code.`);
             }
         } else if (field === "grade") {
             const grades = ["A", "B", "C", "D", "E", "F"];
             if (grade === "") {
                 changeError("Please input a grade.");
-                props.func2(props.num, `${code}: Please input a grade.`);
+                // props.func2(props.num, `${code}: Please input a grade.`);
             } else if (!(grades.includes(grade))) {
                 changeError("Invalid grade.");
-                props.func2(props.num, `${code}: Invalid grade.`)
+                // props.func2(props.num, `${code}: Invalid grade.`)
             }
         } else if (field === "units") {
             if (units === "") {
                 changeError("Please input number of units.");
-                props.func2(props.num, `${code}: Please input number of units.`);
+                // props.func2(props.num, `${code}: Please input number of units.`);
             } else if (isNaN(units)) {
                 changeError("Invalid number.");
-                props.func2(props.num, `${code}: Invalid number.`);
+                // props.func2(props.num, `${code}: Invalid number.`);
             }
         }
     } 
@@ -50,14 +50,14 @@ function Course(props) {
         props.func(props.num, {code: event.target.value});
         changeCode(event.target.value.toString());
         if (event.target.value !== "") {
-            props.func2("");
+            // props.func2("");
             changeError("");
             handleErrors("grade")
             handleErrors("units")
         } else if (event.target.value === "") {
             changeCode("")
             changeError("Please input course code.");
-            props.func2(props.num, `${code}: Please input course code.`);
+            // props.func2(props.num, `${code}: Please input course code.`);
         }  
         props.func(props.num, {code: event.target.value});
     }
@@ -67,17 +67,17 @@ function Course(props) {
         let convUnits = parseInt(event.target.value.toString());
         changeUnits(event.target.value.toString())
         if (event.target.value !== "" && !(isNaN(convUnits))) {
-            props.func2(props.num, "");
+            // props.func2(props.num, "");
             changeError("");
             handleErrors("code")
             handleErrors("grade")
         } else if (event.target.value === "") {
             changeUnits("")
             changeError("Please input number of units.");
-            props.func2(props.num, `${code}: Please input number of units.`);
+            // props.func2(props.num, `${code}: Please input number of units.`);
         } else if (isNaN(convUnits)) {
             changeError("Invalid number.");
-            props.func2(props.num, `${code}: Invalid number.`);
+            // props.func2(props.num, `${code}: Invalid number.`);
         }
     }
     const handleOnChangeGrade = (event) => {
@@ -87,17 +87,17 @@ function Course(props) {
         changeGrade(captGrade);
         if (grades.includes(captGrade)) {
             changeGrade(captGrade);
-            props.func2(props.num, "");
+            // props.func2(props.num, "");
             changeError("");
             handleErrors("code")
             handleErrors("units")
         } else if (captGrade === "") {
             changeGrade("")
             changeError("Please input a grade.");
-            props.func2(props.num, `${code}: Please input a grade.`);
+            // props.func2(props.num, `${code}: Please input a grade.`);
         } else if (!(grades.includes(captGrade))) {
             changeError("Invalid grade.");
-            props.func2(props.num, `${code}: Invalid grade.`)
+            // props.func2(props.num, `${code}: Invalid grade.`)
         }
     }
     return (
@@ -125,5 +125,4 @@ function Course(props) {
         </div>
     );
 }
-
 export default Course;
