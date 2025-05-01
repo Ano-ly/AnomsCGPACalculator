@@ -8,7 +8,7 @@ function App() {
       <div className="cont__main">
         <div className="cont__main__dec"> 
           <div className="cont__main__dec__col cont__main__dec__col--col1">
-            
+
           </div>
           <div className="cont__main__dec__col cont__main__dec__col--col2">
             
@@ -24,7 +24,7 @@ function App() {
       </div>
       <div className="cont__lgo">
         <div className="cont__lgo__img">
-          Anom's<br/>GPA Calculator
+          Anom's<br/>GPA Calculator<br/>By <span class="cont__lgo__img__lnk"><a href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a></span>
         </div>
       </div>
     </div>

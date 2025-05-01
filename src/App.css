@@ -65,7 +65,7 @@
   padding-right: 1rem;
   overflow-x: scroll;
 }
-.cont__main__cmb__cpt {
+.cont__cpt {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@
   justify-content: flex-end;
   gap: 2rem;
 }
-.cont__main__cmb__cpt__btn {
+.cont__cpt__btn {
   background-color: var(--div4-color);
   box-shadow: inset -0.01rem -0.01rem 0.1rem rgb(255, 255, 255);
   border-radius: 0.5rem;
@@ -86,7 +86,7 @@
   user-select: none; 
   max-width: fit-content;
 }
-.cont__main__cmb__cpt__rst {
+.cont__cpt__rst {
   animation-name: colorblink;
   animation-duration: 0.7s;
   animation-iteration-count: infinite;
@@ -102,7 +102,7 @@
   border-radius: 0.5rem;
   padding: 1rem;
   text-align: center;
-  margin-left: 2rem;
+  margin-left: 0rem;
 }
 .cont__main__cmb__maj__sbar__btn {
   background-color: var(--div4-color);
@@ -313,6 +313,9 @@
   color: var(--font1-color);
   text-align: center;
 }
+.cont__lgo__img__lnk {
+  color: var(--font4-color)
+}
 
 
 
@@ -334,7 +337,7 @@
   .cont__main__cmb__maj {
     padding-right: 0rem;
   } 
-  .cont__main__cmb__cpt__rst {
+  .cont__cpt__rst {
     line-height: 2rem;
     min-height: 3.5rem;
     padding: 0.5rem;

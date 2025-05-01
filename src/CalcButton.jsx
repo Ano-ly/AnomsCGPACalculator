@@ -50,13 +50,13 @@ function CalcButton(props) {
     };
 
     return (
-        <div className="cont__main__cmb__cpt">
-            <div className="cont__main__cmb__cpt__btn" onClick={() => {
+        <div className="cont__cpt">
+            <div className="cont__cpt__btn" onClick={() => {
                     changeTheGPA();
                 }}>
                 Compute
             </div>
-            <div className="cont__main__cmb__cpt__rst">
+            <div className="cont__cpt__rst">
             {error ? "Please review information filled." : "Your GPA is"} <br/> <b className="bold">{gpa}</b>
             </div>
         </div>
