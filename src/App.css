@@ -314,7 +314,13 @@
   text-align: center;
 }
 .cont__lgo__img__lnk {
-  color: var(--font4-color)
+  color: var(--font4-color);
+}
+.cont__lgo__img__lnk:link {
+  color: var(--font4-color);
+}
+.cont__lgo__img__lnk:hover {
+  color: var(--font5-color);
 }
 
 

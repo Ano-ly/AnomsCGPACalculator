@@ -24,7 +24,7 @@ function App() {
       </div>
       <div className="cont__lgo">
         <div className="cont__lgo__img">
-          Anom's<br/>GPA Calculator<br/>By <span class="cont__lgo__img__lnk"><a href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a></span>
+          Anom's<br/>GPA Calculator<br/>By <a class="cont__lgo__img__lnk" href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a>
         </div>
       </div>
     </div>
