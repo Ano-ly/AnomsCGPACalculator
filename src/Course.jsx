@@ -104,9 +104,9 @@ function Course(props) {
         <div className="cont__main__cmb__maj__crsdiv__cse">
             <div className="cont__main__cmb__maj__crsdiv__cse__flds">
                 <div className="cont__main__cmb__maj__crsdiv__cse__flds__main">
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="Course Code" name="crs_title" onChange={handleOnChangeCode}/>
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="No of Units" name="units" onChange={handleOnChangeUnits}/>
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld" type="text" placeholder="Grade" name="grade" onChange={handleOnChangeGrade}/>
+                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="Course Code, i.e, MTH 101" name="crs_title" onChange={handleOnChangeCode}/>
+                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld staticinfo" type="text" placeholder="No of Units, i.e, 3" name="units" onChange={handleOnChangeUnits}/>
+                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__fld" type="text" placeholder="Grade, i.e, B" name="grade" onChange={handleOnChangeGrade}/>
                 </div>
                 <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">
                     <div className="cont__main__cmb__maj__crsdiv__cse__flds__err__smb">
