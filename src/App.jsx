@@ -1,14 +1,16 @@
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import CoursesForm from './CoursesForm.jsx';
-
+import ModeButton from './ModeButton';
 function App() {
   
   return (
     <div className="cont">
+      <Analytics />
       <div className="cont__main">
         <div className="cont__main__dec"> 
           <div className="cont__main__dec__col cont__main__dec__col--col1">
-
+            <ModeButton/>
           </div>
           <div className="cont__main__dec__col cont__main__dec__col--col2">
             

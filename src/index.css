@@ -10,6 +10,7 @@
   --div4-color: rgb(25, 26, 28);
   --div5-color: rgb(58, 59, 62);
   --div6-color: rgb(106, 107, 113);
+  --div7-color: rgb(255, 255, 255);
   --light-color: rgba(236, 233, 255, 0.87);
   background-color: white;
   --font1-color: rgba(247, 246, 252, 0.87);
@@ -17,6 +18,7 @@
   --font3-color: rgb(226, 40, 40);
   --font4-color: rgb(220, 100, 220);
   --font5-color: rgb(230, 163, 230);
+  --font6-color: rgb(243, 55, 55);
   font-synthesis: none;
 }
 
