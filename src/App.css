@@ -5,7 +5,7 @@
 }
 @keyframes colorblink {
   from {background-color: var(--div4-color);}
-  to {background-color: var(--div5-color);}
+  to {background-color: var(--div9-color);}
 }
 
 #root {
@@ -60,7 +60,7 @@
 }
 .cont__cpt__btn {
   background-color: var(--div4-color);
-  box-shadow: inset -0.01rem -0.01rem 0.1rem rgb(255, 255, 255);
+  box-shadow: inset -0.01rem -0.01rem 0.2rem var(--div1-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
@@ -219,7 +219,7 @@
 .cont__main__cmb__maj__crsdiv__cse__flds__main__fld {
   flex: 1;
   font-family: "Chakra Petch", serif;
-  color: white;
+  color: var(--font1-color);
   font-size: 1.0rem;
   min-width: 0;
   min-height: 2.5rem;
