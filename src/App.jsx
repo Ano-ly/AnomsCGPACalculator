@@ -10,7 +10,7 @@ function App() {
       <div className="cont__main">
         <div className="cont__main__dec"> 
           <div className="cont__main__dec__col cont__main__dec__col--col1">
-            {/* <ModeButton/> */}
+            <ModeButton/>
           </div>
           <div className="cont__main__dec__col cont__main__dec__col--col2">
             
