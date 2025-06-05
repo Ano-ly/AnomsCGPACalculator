@@ -23,7 +23,7 @@
   box-sizing: border-box;
   display: flex;
   margin-top: 0;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 95vw;
   min-height: 100vh;
