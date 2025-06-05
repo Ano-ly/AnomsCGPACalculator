@@ -44,7 +44,7 @@ function CalcButton(props) {
             changeErr(0);
             changeGpa(calculate(props.courses));
         } else {
-            changeGpa("ERR");    
+            changeGpa("___");    
             changeErr(1);
         }
     };
