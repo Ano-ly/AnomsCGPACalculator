@@ -3,9 +3,9 @@ import { Component, useEffect, useState} from 'react';
 
 
 function Course(props) {
-    const [code, changeCode] = useState("");
-    const [grade, changeGrade] = useState("");
-    const [units, changeUnits] = useState("");
+    const [code, changeCode] = useState(props.initialCode || "");
+    const [grade, changeGrade] = useState(props.initialGrade || "");
+    const [units, changeUnits] = useState(props.initialUnits || "");
     const [error, changeError] = useState("");
 
     // Display initial error only when course input field component is mounted
@@ -47,19 +47,19 @@ function Course(props) {
     
 
     const handleOnChangeCode  = (event) => {
-        props.func(props.num, {code: event.target.value});
-        changeCode(event.target.value.toString());
-        if (event.target.value !== "") {
+        const newValue = event.target.value;
+        changeCode(newValue);
+        if (newValue !== "") {
             // props.func2("");
             changeError("");
             handleErrors("grade")
             handleErrors("units")
-        } else if (event.target.value === "") {
+        } else if (newValue === "") {
             changeCode("")
             changeError("Please input course code.");
             // props.func2(props.num, `${code}: Please input course code.`);
         }  
-        props.func(props.num, {code: event.target.value});
+        props.func(props.num, {code: newValue, grade: grade, units: units});
     }
     
     const handleOnChangeUnits = (event) => {

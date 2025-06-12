@@ -1,7 +1,7 @@
 import { useState} from 'react';
 
 function CalcButton(props) {
-    const [gpa, changeGpa] = useState(0);
+    const [gpa, changeGpa] = useState("___");
     const [error, changeErr] = useState(0);
     // Calculate GPA and return to two decimal places
     const calculate = (items) => {
@@ -23,8 +23,8 @@ function CalcButton(props) {
 
     //Check if all the information supplied is valid for computation
     const checkCourse = (cObj) => {
-        const grades = ["A", "B", "C", "D", "E", "F", "a", "b", "c", "d", "e", "f"];
-        if (cObj.code !== "" && !(isNaN(Number(cObj.units))) && cObj.units!== "" && grades.includes(cObj.grade)) {
+        const grades = ["A", "B", "C", "D", "E", "F"];
+        if (cObj.code.trim() !== "" && !(isNaN(parseInt(cObj.units))) && grades.includes(cObj.grade)) {
             return true;
         } else {
             return false;
