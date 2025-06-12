@@ -104,9 +104,9 @@ function Course(props) {
         <div className="cont__main__cmb__maj__crsdiv__cse">
             <div className="cont__main__cmb__maj__crsdiv__cse__flds">
                 <div className="cont__main__cmb__maj__crsdiv__cse__flds__main">
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="text" placeholder="Course Code, e.g, MTH 101" name="crs_title" autocapitalize="characters" onChange={handleOnChangeCode}/>
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="number" min="0" max="100" placeholder="No of Units, e.g, 5" name="units" onChange={handleOnChangeUnits}/>
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld" type="text" placeholder="Grade, e.g, B" name="grade" onChange={handleOnChangeGrade}/>
+                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="text" placeholder="Course Code, e.g, MTH 101" name="crs_title" autoCapitalize="characters" onChange={handleOnChangeCode} value={code}/>
+                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="number" min="0" max="100" placeholder="No of Units, e.g, 5" name="units" onChange={handleOnChangeUnits} value={units}/>
+                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld" type="text" placeholder="Grade, e.g, B" name="grade" onChange={handleOnChangeGrade} value={grade}/>
                 </div>
                 <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">
                     <div className="cont__main__cmb__maj__crsdiv__cse__flds__err__smb">
