@@ -8,6 +8,12 @@
   to {background-color: var(--div9-color);}
 }
 
+.cont__main__cmb__maj__crsdiv__cse__flds__main__fld[type="number"]::-webkit-outer-spin-button,
+.cont__main__cmb__maj__crsdiv__cse__flds__main__fld[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
 #root {
   box-sizing: border-box;
   max-width: 100vw;
