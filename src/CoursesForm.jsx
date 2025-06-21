@@ -1,5 +1,5 @@
 import Course from './Course';
-import { useState} from 'react';
+import { useState, useEffect } from 'react';
 import CalcButton from './CalcButton.jsx';
 
 function AddCourse({ onAddCourse }) {
@@ -18,7 +18,34 @@ function RemCourse({ onRemCourse }) {
 }
 
 function CoursesForm() {
-    const [myCourses, changeMyCourses] = useState([{code: "", units: "", grade: ""}]);
+    // Load initial data from localStorage or use default
+    const loadCoursesFromStorage = () => {
+        try {
+            const savedCourses = localStorage.getItem('gpaCalculatorCourses');
+            if (savedCourses) {
+                return JSON.parse(savedCourses);
+            }
+        } catch (error) {
+            console.error('Error loading courses from localStorage:', error);
+        }
+        return [{code: "", units: "", grade: ""}];
+    };
+
+    const [myCourses, changeMyCourses] = useState(loadCoursesFromStorage);
+    const [isSaving, setIsSaving] = useState(false);
+
+    // Save courses to localStorage whenever they change
+    useEffect(() => {
+        setIsSaving(true);
+        try {
+            localStorage.setItem('gpaCalculatorCourses', JSON.stringify(myCourses));
+        } catch (error) {
+            console.error('Error saving courses to localStorage:', error);
+        }
+        // Hide the saving indicator after a short delay
+        setTimeout(() => setIsSaving(false), 1000);
+    }, [myCourses]);
+
     // Stores errors of each of the courses
     // const [errorStrs, changeErrorStrs] = useState([]);
     //const [noOfCourses, changeNoOfCourses] = useState(0);
@@ -33,6 +60,17 @@ function CoursesForm() {
             //changeNoOfCourses(noOfCourses - 1);
         }
     };
+
+    // Clear all saved data
+    const clearData = () => {
+        try {
+            localStorage.removeItem('gpaCalculatorCourses');
+            changeMyCourses([{code: "", units: "", grade: ""}]);
+        } catch (error) {
+            console.error('Error clearing localStorage:', error);
+        }
+    };
+
     //Function to update attributes of list of courses 'myCourses'
     const changeCourseInfo = (num, newCourse) => {
         changeMyCourses(myCourses => {
@@ -71,6 +109,14 @@ function CoursesForm() {
                     <div className="cont__main__cmb__maj__sbar__cnt">
                         {myCourses.length}
                     </div>
+                    <div className="cont__main__cmb__maj__sbar__btn" onClick={clearData} title="Clear all data">
+                        🗑️
+                    </div>
+                    {isSaving && (
+                        <div className="cont__main__cmb__maj__sbar__saving" title="Saving...">
+                            💾
+                        </div>
+                    )}
                 </div>
                 <form className="cont__main__cmb__maj__crs">
                     <div className="cont__main__cmb__maj__crsdiv">
