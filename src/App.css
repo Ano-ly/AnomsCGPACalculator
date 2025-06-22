@@ -145,7 +145,7 @@
 }
 
 .cont__main__cmb__maj__sbar__btn:hover, .cont__cpt__btn:hover {
-  background-color: var(--div5-color);
+  background-color: var(--div10-color);
   transform: scale(1.03);
 }
 .cont__main__cmb__maj {

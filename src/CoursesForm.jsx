@@ -114,7 +114,7 @@ function CoursesForm() {
                     </div>
                     {isSaving && (
                         <div className="cont__main__cmb__maj__sbar__saving" title="Saving...">
-                            💾
+                            ...
                         </div>
                     )}
                 </div>

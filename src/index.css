@@ -14,6 +14,7 @@
   --div7-color: rgb(166, 132, 152);
   --div8-color: white;
   --div9-color: rgb(233, 195, 217);
+  --div10-color:rgb(232, 192, 215);
   --light-color: rgba(248, 248, 248, 0.87);
   --font1-color: rgb(119, 34, 85);
   --font2-color: rgba(243, 243, 246, 0.87);
@@ -33,6 +34,7 @@ body.dark-mode {
   --div7-color: rgb(255, 255, 255);
   --div8-color: rgb(25, 26, 28);
   --div9-color: rgb(58, 59, 62);
+  --div10-color: rgb(58, 59, 62);
   --light-color: rgba(236, 233, 255, 0.87);
   --background-color: white;
   --font1-color: rgba(247, 246, 252, 0.87);

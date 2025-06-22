@@ -19,6 +19,13 @@ function Course(props) {
     
     }, [])
 
+    // Update internal state when props change (for clearing functionality)
+    useEffect(() => {
+        changeCode(props.initialCode || "");
+        changeGrade(props.initialGrade || "");
+        changeUnits(props.initialUnits || "");
+    }, [props.initialCode, props.initialGrade, props.initialUnits]);
+
     const handleErrors = (field) => {
         if (field === "code") {
             if (code === "") {
