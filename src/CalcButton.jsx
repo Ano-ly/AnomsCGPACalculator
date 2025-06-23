@@ -10,10 +10,11 @@ function CalcButton(props) {
         let calcGpa = 0;
         const grades = {"A": 5, "B": 4, "C": 3, "D": 2, "E": 1, "F": 0}
         const grades_4 = {"A": 4, "B": 3, "C": 2, "D": 1, "E": 0}
+        const gradeMap = props.gradingSystem === '4' ? grades_4 : grades;
         for (let item of items) {
             if (parseInt(item.units) != 0) {
                 unitsTotal += parseInt(item.units);
-                totalPoints += parseInt(item.units) * grades[item.grade];
+                totalPoints += parseInt(item.units) * gradeMap[item.grade];
             }
         }
         if (unitsTotal !== 0) {
@@ -24,7 +25,7 @@ function CalcButton(props) {
 
     //Check if all the information supplied is valid for computation
     const checkCourse = (cObj) => {
-        const grades = ["A", "B", "C", "D", "E", "F"];
+        const grades = props.gradingSystem === '4' ? ["A", "B", "C", "D", "E"] : ["A", "B", "C", "D", "E", "F"];
         if (cObj.code.trim() !== "" && !(isNaN(parseInt(cObj.units))) && grades.includes(cObj.grade)) {
             return true;
         } else {

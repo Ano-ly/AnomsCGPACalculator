@@ -33,6 +33,7 @@ function CoursesForm() {
 
     const [myCourses, changeMyCourses] = useState(loadCoursesFromStorage);
     const [isSaving, setIsSaving] = useState(false);
+    const [gradingSystem, setGradingSystem] = useState('5'); // '5' for 5-point, '4' for 4-point
 
     // Save courses to localStorage whenever they change
     useEffect(() => {
@@ -102,6 +103,15 @@ function CoursesForm() {
 
     return (
         <div className="cont__main__cmb">
+            <div style={{display:'flex', alignItems:'center', gap:'1em', marginBottom:'0.5em', color:'var(--font1-color)', fontSize: '0.7rem', marginLeft: '5rem'}}>
+                <label style={{}}>Grading System:</label>
+                <label style={{display:'flex', alignItems:'center', gap:'0.3em', paddingRight: '0.6rem'}}>
+                    <input style={{marginTop: '0rem', appearance: 'none'}} type="radio" name="gradingSystem" value="5" checked={gradingSystem==='5'} onChange={()=>setGradingSystem('5')} /> 5-point
+                </label>
+                <label style={{display:'flex', alignItems:'center', gap:'0.3em', paddingRight: '0.6rem'}}>
+                    <input style={{marginTop: '0rem', appearance: 'none'}} type="radio" name="gradingSystem" value="4" checked={gradingSystem==='4'} onChange={()=>setGradingSystem('4')} /> 4-point
+                </label>
+            </div>
             <div className="cont__main__cmb__maj">
                 <div className="cont__main__cmb__maj__sbar">
                     <AddCourse onAddCourse={addCourse}/>
@@ -114,17 +124,17 @@ function CoursesForm() {
                     </div>
                     {isSaving && (
                         <div className="cont__main__cmb__maj__sbar__saving" title="Saving...">
-                            ...
+                            Saving...
                         </div>
                     )}
                 </div>
                 <form className="cont__main__cmb__maj__crs">
                     <div className="cont__main__cmb__maj__crsdiv">
-                        {myCourses.map((c, i) => {return <Course key={i} num={i + 1} func={changeCourseInfo} initialCode={c.code} initialGrade={c.grade} initialUnits={c.units}/>})}
+                        {myCourses.map((c, i) => {return <Course key={i} num={i + 1} func={changeCourseInfo} initialCode={c.code} initialGrade={c.grade} initialUnits={c.units} gradingSystem={gradingSystem}/>})}
                     </div>
                 </form>
             </div>
-            <CalcButton courses={myCourses}/>
+            <CalcButton courses={myCourses} gradingSystem={gradingSystem}/>
         </div>
     );
 }
