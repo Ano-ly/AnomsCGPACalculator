@@ -9,6 +9,7 @@ function CalcButton(props) {
         let totalPoints = 0;
         let calcGpa = 0;
         const grades = {"A": 5, "B": 4, "C": 3, "D": 2, "E": 1, "F": 0}
+        const grades_4 = {"A": 4, "B": 3, "C": 2, "D": 1, "E": 0}
         for (let item of items) {
             if (parseInt(item.units) != 0) {
                 unitsTotal += parseInt(item.units);

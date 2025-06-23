@@ -94,26 +94,38 @@ function Course(props) {
         changeGrade(captGrade);
         if (grades.includes(captGrade)) {
             changeGrade(captGrade);
-            // props.func2(props.num, "");
             changeError("");
             handleErrors("code")
             handleErrors("units")
         } else if (captGrade === "") {
             changeGrade("")
             changeError("Please input a grade.");
-            // props.func2(props.num, `${code}: Please input a grade.`);
         } else if (!(grades.includes(captGrade))) {
             changeError("Invalid grade.");
-            // props.func2(props.num, `${code}: Invalid grade.`)
         }
     }
+
     return (
         <div className="cont__main__cmb__maj__crsdiv__cse">
             <div className="cont__main__cmb__maj__crsdiv__cse__flds">
                 <div className="cont__main__cmb__maj__crsdiv__cse__flds__main">
                     <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="text" placeholder="Course Code, e.g, MTH 101" name="crs_title" autoCapitalize="characters" onChange={handleOnChangeCode} value={code}/>
                     <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="number" onWheel={(event) => event.preventDefault()} min="0" max="100" placeholder="No of Units, e.g, 5" name="units" onChange={handleOnChangeUnits} value={units}/>
-                    <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld" type="text" placeholder="Grade, e.g, B" name="grade" onChange={handleOnChangeGrade} value={grade}/>
+                    <div className="grade-radio-row">
+                        {['A','B','C','D','E','F'].map(opt => (
+                            <label key={opt} style={{display:'inline-flex',alignItems:'center',marginRight:'0.5rem',marginTop: '0.1rem', fontSize: '0.9rem', paddingRight: '0.6rem'}}>
+                                <input
+                                    type="radio"
+                                    name={`grade-${props.num}`}
+                                    value={opt}
+                                    checked={grade === opt}
+                                    onChange={e => handleOnChangeGrade({target: {value: opt}})}
+                                    style={{marginRight:'0.2em', marginTop: '0rem', appearance: 'none'}}
+                                />
+                                {opt}
+                            </label>
+                        ))}
+                    </div>
                 </div>
                 <div className="cont__main__cmb__maj__crsdiv__cse__flds__err">
                     <div className="cont__main__cmb__maj__crsdiv__cse__flds__err__smb">
