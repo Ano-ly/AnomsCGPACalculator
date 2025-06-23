@@ -122,6 +122,9 @@
   padding-top: 0.5rem;
   gap: 0.5rem;
 }
+.cont__main__cmb__maj__sbar__saving {
+  font-size: 0.5rem;
+}
 .cont__main__cmb__maj__crs {
   border: 0.02rem solid var(--div5-color);
   flex: 1 1 0;
@@ -149,6 +152,10 @@
 .cont__main__cmb__maj__sbar__btn:hover, .cont__cpt__btn:hover {
   background-color: var(--div10-color);
   transform: scale(1.03);
+}
+.cont__main__cmb__maj__sbar__btn--bin {
+  padding: 0.5rem;
+  font-size: 1.0rem;
 }
 .cont__main__cmb__maj {
   display: flex;
@@ -251,9 +258,10 @@
 }
 .cont__main__cmb__maj__sbar__cnt {
   background-color: var(--div1-color);
+  margin: 0.3rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   color: var(--font2-color);
   font-weight: 600;
   text-align: center;
@@ -391,6 +399,23 @@ label:has(input[type="radio"]:checked) {
   border-radius: 0.3rem;
   padding: 0.2rem;
   cursor: pointer;
+  padding-right: 0.6rem;
+}
+.grade-radio-row__lbl {
+  display: inline-flex;
+  align-items: center; 
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  font-size: 0.8rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.6rem;
+  border: 1.5px solid var(--div6-color);
+  border-radius: 0.2rem;
+}
+.grade-radio-row__lbl:hover {
+  background-color: var(--div6-color);
+  transform: scale(1.03);
 }
 
 
@@ -408,6 +433,12 @@ label:has(input[type="radio"]:checked) {
     padding-left: 0rem;
     padding-right: 0rem;
   } 
+  .cont__main__cmb__grd__lbl:hover {
+    background-color: var(--div6-color);
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    transform: scale(1.03);
+  }
   .cont__main__cmb__maj {
     padding-right: 0rem;
   } 
@@ -431,6 +462,159 @@ label:has(input[type="radio"]:checked) {
     font-size: 1rem;
   }
   
+}
+
+/* Walkthrough Styles */
+.walkthrough-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.walkthrough-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.walkthrough-tooltip {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90vw;
+  animation: slideIn 0.4s ease-out;
+  z-index: 2001;
+}
+
+.walkthrough-tooltip--center {
+  transform: translateY(0);
+}
+
+.walkthrough-tooltip--top {
+  transform: translateY(-20px);
+}
+
+.walkthrough-tooltip--bottom {
+  transform: translateY(20px);
+}
+
+.walkthrough-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.walkthrough-content h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.walkthrough-content p {
+  margin: 0 0 1.5rem 0;
+  color: #666;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.walkthrough-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.walkthrough-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.walkthrough-btn--primary {
+  background: #007bff;
+  color: white;
+}
+
+.walkthrough-btn--primary:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.walkthrough-btn--secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.walkthrough-btn--secondary:hover:not(:disabled) {
+  background: #545b62;
+  transform: translateY(-1px);
+}
+
+.walkthrough-btn--secondary:disabled {
+  background: #dee2e6;
+  color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.walkthrough-progress {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.walkthrough-skip {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.walkthrough-skip:hover {
+  color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 

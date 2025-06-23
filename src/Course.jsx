@@ -113,7 +113,7 @@ function Course(props) {
                     <input className="cont__main__cmb__maj__crsdiv__cse__flds__main__fld staticinfo" type="number" onWheel={(event) => event.preventDefault()} min="0" max="100" placeholder="No of Units, e.g, 5" name="units" onChange={handleOnChangeUnits} value={units}/>
                     <div className="grade-radio-row">
                         {(props.gradingSystem === '4' ? ['A','B','C','D','E'] : ['A','B','C','D','E','F']).map(opt => (
-                            <label key={opt} style={{display:'inline-flex',alignItems:'center',marginRight:'0.5rem',marginTop: '0.1rem', fontSize: '0.9rem', paddingRight: '0.6rem'}}>
+                            <label key={opt} class="grade-radio-row__lbl">
                                 <input
                                     type="radio"
                                     name={`grade-${props.num}`}

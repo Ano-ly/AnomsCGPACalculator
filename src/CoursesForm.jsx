@@ -103,12 +103,12 @@ function CoursesForm() {
 
     return (
         <div className="cont__main__cmb">
-            <div style={{display:'flex', alignItems:'center', gap:'1em', marginBottom:'0.5em', color:'var(--font1-color)', fontSize: '0.7rem', marginLeft: '5rem'}}>
+            <div className="cont__main__cmb__grd" style={{display:'flex', alignItems:'center', gap:'1em', marginBottom:'0.5em', color:'var(--font1-color)', fontSize: '0.7rem', marginLeft: '5rem'}}>
                 <label style={{}}>Grading System:</label>
-                <label style={{display:'flex', alignItems:'center', gap:'0.3em', paddingRight: '0.6rem'}}>
+                <label className="cont__main__cmb__grd__lbl" style={{display:'flex', alignItems:'center', gap:'0.3em', paddingRight: '0.6rem'}}>
                     <input style={{marginTop: '0rem', appearance: 'none'}} type="radio" name="gradingSystem" value="5" checked={gradingSystem==='5'} onChange={()=>setGradingSystem('5')} /> 5-point
                 </label>
-                <label style={{display:'flex', alignItems:'center', gap:'0.3em', paddingRight: '0.6rem'}}>
+                <label className="cont__main__cmb__grd__lbl" style={{display:'flex', alignItems:'center', gap:'0.3em', paddingRight: '0.6rem'}}>
                     <input style={{marginTop: '0rem', appearance: 'none'}} type="radio" name="gradingSystem" value="4" checked={gradingSystem==='4'} onChange={()=>setGradingSystem('4')} /> 4-point
                 </label>
             </div>
@@ -119,12 +119,12 @@ function CoursesForm() {
                     <div className="cont__main__cmb__maj__sbar__cnt">
                         {myCourses.length}
                     </div>
-                    <div className="cont__main__cmb__maj__sbar__btn" onClick={clearData} title="Clear all data">
+                    <div className="cont__main__cmb__maj__sbar__btn cont__main__cmb__maj__sbar__btn--bin" onClick={clearData} title="Clear all data">
                         🗑️
                     </div>
                     {isSaving && (
                         <div className="cont__main__cmb__maj__sbar__saving" title="Saving...">
-                            Saving...
+                            ...
                         </div>
                     )}
                 </div>
