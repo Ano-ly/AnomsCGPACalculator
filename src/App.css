@@ -278,6 +278,13 @@
 .cont__main__dec__col--col1 {
   background-color: var(--div4-color);
 }
+.cont__main__dec__col__info {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.0rem;
+  margin-left: 0.3rem
+}
 .cont__main__dec__col--col1__mod {
   background-color: var(--div5-color);
   margin-top: 0.1rem;
@@ -335,7 +342,36 @@
 .cont__lgo__img__lnk:hover {
   color: var(--font5-color);
 }
-
+.moreinfobg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  z-index: 1000
+}
+.moreinfobg_info {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 90vw;
+  max-height: 80vh;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  position: relative
+}
+.moreinfobg_info_cls {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.7em;
+  cursor: pointer
+}
 
 
 
