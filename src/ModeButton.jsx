@@ -34,7 +34,7 @@ function ModeButton() {
         setTheme(previousTheme => (previousTheme === 'Dark' ? 'Light' : 'Dark'));
     }
     return (
-        <div className="cont__main__dec__col--col1__mod" onClick={toggleTheme}>
+        <div className="cont__main__dec__col__mod" onClick={toggleTheme}>
             {oppTheme} Mode
         </div>
     );

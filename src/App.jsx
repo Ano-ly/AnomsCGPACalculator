@@ -97,12 +97,6 @@ function App() {
               ❓Help
             </button>
           </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col2">
-          
-          </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col1 cont__main__dec__col--col1--one">
-            Calculate your GPA
-          </div>
         </div>
         <CoursesForm />    
       </div>
