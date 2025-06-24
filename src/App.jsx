@@ -82,7 +82,7 @@ function App() {
       <Analytics />
       <div className="cont__lgo">
         <div className="cont__lgo__img">
-          Anom's GPA Calculator<p className="cont__lgo__img__txt">By <a class="cont__lgo__img__lnk" href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a></p>
+          Anom's GPA Calculator<p className="cont__lgo__img__txt">By <a class="cont__lgo__img__lnk" href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a> © all rights reserved</p>
         </div>
       </div>
       <div className="cont__main">
