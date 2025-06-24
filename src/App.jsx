@@ -80,41 +80,33 @@ function App() {
   return (
     <div className="cont">
       <Analytics />
+      <div className="cont__lgo">
+        <div className="cont__lgo__img">
+          Anom's GPA Calculator<p className="cont__lgo__img__txt">By <a class="cont__lgo__img__lnk" href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a></p>
+        </div>
+      </div>
       <div className="cont__main">
         <div className="cont__main__dec"> 
-          <div className="cont__main__dec__col cont__main__dec__col--col1">
+          <div className="cont__main__dec__col cont__main__dec__col--col1 cont__main__dec__col--col1--1">
             <ModeButton/>
-          </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col2">
-          <button 
-              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.6rem', marginLeft: '0.3em', color: 'var(--font1-color)'}} 
+            <button 
+              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.6rem', marginLeft: '0rem', color: 'var(--font1-color)'}} 
               aria-label="Help walkthrough"
               onClick={startWalkthrough}
             >
               ❓Help
             </button>
           </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col1 cont__main__dec__col--col1--one">
-            Calculate
+          <div className="cont__main__dec__col cont__main__dec__col--col2">
+          
           </div>
-          <div className="cont__main__dec__col cont__main__dec__col--col2 cont__main__dec__col--col1--two">
-            your GPA
-            {/* <button 
-              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2em', marginLeft: '0.3em' }} 
-              aria-label="Info about grading system"
-              onClick={() => setShowInfo(true)}
-            >
-              ℹ️
-            </button> */}
+          <div className="cont__main__dec__col cont__main__dec__col--col1 cont__main__dec__col--col1--one">
+            Calculate your GPA
           </div>
         </div>
         <CoursesForm />    
       </div>
-      <div className="cont__lgo">
-        <div className="cont__lgo__img">
-          Anom's<br/>GPA Calculator<br/>By <a class="cont__lgo__img__lnk" href='https://www.linkedin.com/in/amarachiuvere'>Amarachi Uvere</a>
-        </div>
-      </div>
+
       
       {/* Info Modal */}
       {showInfo && (

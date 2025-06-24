@@ -272,21 +272,27 @@
   display: flex;
   flex-direction: row;
   gap: 0;
-  height: 2rem;
-  margin-bottom: 3rem;
+  height: fit-content;
+  justify-content: space-between;
 }
 .cont__main__dec__col {
   box-sizing: border-box;
   height: 4rem;
-  padding-top: 1.2rem;
+  padding-top: 0rem;
   min-width: 25%;
   border-radius: 30px;
+  align-items: center;
 }
 .cont__main__dec__col--col2 {
   background-color: var(--div4-color);
 }
-.cont__main__dec__col--col1 {
+.cont__main__dec__col--col1--1 {
   background-color: var(--div4-color);
+  display: flex;
+  flex-direction: row;
+  min-width: fit-content;
+  gap: 0.5rem;
+  align-items: center;
 }
 .cont__main__dec__col__info {
   background: none;
@@ -307,6 +313,7 @@
   font-size: 0.7rem;
   padding: 0.3rem;
   max-width: fit-content;
+  max-height: fit-content;
   user-select: none;
   transition: background-color .2s, transform .15s;
 }
@@ -318,30 +325,43 @@
 
 .cont__main__dec__col--col1--one {
   text-align: right;
-  padding-right: 0.2rem;
   color: var(--font4-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: fit-content;
 }
 .cont__main__dec__col--col1--two {
   color: var(--font1-color);
   text-align: left;
-  padding-left: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: fit-content;
+  align-items: flex-end;
 }
 .cont__lgo {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1 0 1;
+  /* flex: 1 0 1; */
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
   justify-content: flex-end;
+  border-bottom: 1px solid var(--div6-color);
 }
 .cont__lgo__img {
-  font-size: 1.5rem;
   font-family: "Chakra Petch", serif;
+  line-height: 0.7rem;
   color: var(--font1-color);
   text-align: center;
+}
+.cont__lgo__img__txt {
+  font-size: 0.7rem;
 }
 .cont__lgo__img__lnk {
   color: var(--font4-color);
